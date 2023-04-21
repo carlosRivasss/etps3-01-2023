@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proyecto/paginas/principal.dart';
 
-class principal extends StatefulWidget {
-  const principal({super.key});
+class password extends StatefulWidget {
+  const password({super.key});
 
   @override
-  State<principal> createState() => _principalState();
+  State<password> createState() => _passwordState();
 }
 
-class _principalState extends State<principal> {
+class _passwordState extends State<password> {
   @override
   Widget build(BuildContext context) {
     final Size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 122, 29, 29),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Stack(
-          children: [
+        backgroundColor: Color.fromARGB(255, 122, 29, 29),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Stack(children: [
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
@@ -64,14 +64,9 @@ class _principalState extends State<principal> {
                   child: Column(
                     children: [
                       new Text(
-                        'Ingreso',
+                        'Ingrese su correo electronico',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Image.asset(
-                        'assets/1.png',
-                        height: 100,
-                        width: 100,
                       ),
                       SizedBox(
                         height: 10,
@@ -91,44 +86,32 @@ class _principalState extends State<principal> {
                                     borderSide: BorderSide(
                                         color: Color.fromARGB(255, 94, 11, 5),
                                         width: 2)),
-                                hintText: 'Ejemplo: 25-4953-2016',
-                                labelText: 'Carnet Utec',
-                                prefixIcon: Icon(Icons.person),
+                                hintText: '@ejemplo.gmail.edu.utec.sv',
+                                labelText: 'Correo electronico',
+                                prefixIcon: Icon(Icons.mail),
                               ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            TextFormField(
-                              autocorrect: false,
-                              decoration: const InputDecoration(
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color.fromARGB(255, 94, 11, 5)),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Color.fromARGB(255, 94, 11, 5),
-                                        width: 2)),
-                                hintText: '***************',
-                                labelText: 'Contraseña',
-                                prefixIcon: Icon(Icons.lock_outline_rounded),
-                              ),
-                              obscureText: true,
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             MaterialButton(
                               onPressed: () {},
-                              child: const Text('Ingresar'),
+                              child: const Text('Enviar'),
                               color: Color.fromARGB(255, 153, 51, 51),
                               height: 30,
                             ),
                             SizedBox(
                               height: 10,
                             ),
-                            new Text('¿Olvido su contraseña?')
+                            MaterialButton(
+                              onPressed: () {
+                                home:
+                                principal();
+                              },
+                              child: const Text('Atras'),
+                              color: Color.fromARGB(255, 153, 51, 51),
+                              height: 30,
+                            ),
                           ],
                         )),
                       )
@@ -137,9 +120,7 @@ class _principalState extends State<principal> {
                 ),
               ],
             )
-          ],
-        ),
-      ),
-    );
+          ]),
+        ));
   }
 }

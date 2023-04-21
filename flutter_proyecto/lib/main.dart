@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_proyecto/paginas/password.dart';
 import 'package:flutter_proyecto/paginas/principal.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class Proyecto extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: principal(),
+      home: password(),
     );
   }
 }
